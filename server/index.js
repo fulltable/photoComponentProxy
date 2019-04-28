@@ -1,5 +1,5 @@
+const nr = require('newrelic');
 const express = require('express');
-// const morgan = require('morgan');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -9,7 +9,7 @@ const axios3001 = axios.create({
   baseURL: 'http://54.161.138.158',
 });
 const axios3002 = axios.create({
-  baseURL: 'http://18.188.49.19',
+  baseURL: 'http://localhost:3002',
 });
 const axios3003 = axios.create({
   baseURL: 'http://35.165.224.178',
@@ -44,6 +44,12 @@ app.get('/api/restaurants/:id/overview', (req, res) => {
 
 app.get('/api/restaurants/:id/photos', (req, res) => {
   axios3002.get(`/api/restaurants/${req.params.id}/photos`)
+    .then(response => res.send(response.data))
+    .catch(error => res.send(error));
+});
+
+app.post('/api/restaurant/:id/photos', (req, res) => {
+  axios3002.post(`/api/restaurant/${req.params.id}/photos`, req.body)
     .then(response => res.send(response.data))
     .catch(error => res.send(error));
 });

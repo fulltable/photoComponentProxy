@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server"
+    "start": "nodemon server/cluster.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,13 @@
   },
   "homepage": "https://github.com/opentabs/proxy-chris#readme",
   "dependencies": {
+    "artillery": "^1.6.0-27",
     "axios": "^0.18.0",
-    "express": "^4.16.4"
+    "cluster": "^0.7.7",
+    "express": "^4.16.4",
+    "faker": "^4.1.0",
+    "moment": "^2.24.0",
+    "newrelic": "^5.7.0",
+    "os": "^0.1.1"
   }
 }

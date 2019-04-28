@@ -1,0 +1,20 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 5
+      arrivalRate: 1000
+  processor: "./my-functions.js"
+scenarios:
+  - flow:
+    - function: "generateRandomData"
+    - get:
+        url: "/restaurants/{{ userid }}"
+    - post:
+        url: "/api/restaurant/{{ userid }}/photos"
+        json: 
+          id: "{{ id }}"
+          comment: "{{ comment }}"
+          date: "{{ date }}"
+          imageurl: "{{ imageurl }}"
+          userid: "{{ userid }}"
+    - log: "Sent a request with {{ id }}, {{ comment }}, {{ date }}, {{ imageurl }}, {{ userid }}"
