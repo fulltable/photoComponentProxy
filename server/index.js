@@ -9,7 +9,7 @@ const axios3001 = axios.create({
   baseURL: 'http://54.161.138.158',
 });
 const axios3002 = axios.create({
-  baseURL: 'http://52.53.232.126:3002',
+  baseURL: 'http://ec2-52-53-216-52.us-west-1.compute.amazonaws.com',
 });
 const axios3003 = axios.create({
   baseURL: 'http://35.165.224.178',
