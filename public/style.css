@@ -28,12 +28,12 @@
   margin-right: auto;
   grid-column-gap: 40px;
 }
-.proxy-sidebar {
+.app {
   padding-top: 10px;
   grid-column: 2 / 3;
   grid-row: 2 / 6;
 }
-.proxy-overview {
+.overview {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
 }
@@ -41,14 +41,14 @@
   grid-column: 1;
   grid-row: 3 / 4;
 }
-.proxy-menu {
+.menu {
   grid-column: 1;
   grid-row: 4 / 5;
   overflow: auto;
   display: flex;
   flex-direction: column;
 }
-.proxy-reviews {
+.reviews {
   grid-column: 1;
   grid-row: 5;
 }
